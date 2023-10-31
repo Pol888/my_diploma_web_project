@@ -1,0 +1,89 @@
+
+
+html {
+    height: 100%;
+}
+
+body {
+
+    min-height: 100%;
+    display: grid;
+    grid-template-rows:112px 1fr auto;
+}
+
+.main_m{
+    width: 1518px;
+    margin: auto;
+}
+
+.main_mg{
+    height: 100px;
+    width: 100px;
+    border: 1px solid red;
+}
+
+.header_m {
+
+    height: 111px;
+    background: linear-gradient(to right, hotpink -1900px, white);
+}
+
+
+.footer_m {
+    background-color: rgba(67,101,148,0.67);
+    height: 135px;
+
+}
+
+.bg_color_header {
+
+    background: linear-gradient(to right, white 20%, hotpink);
+
+}
+
+.icon_my {
+     background-image: url("../img/menu.svg");
+     }
+
+.border_my {
+    border: 1px solid #800080;
+}
+@media (min-width: 2600px) {
+    .header_m {
+        height: 112px;
+        background: linear-gradient(to right, hotpink -1900px, white);
+    }
+}
+
+@media (max-width: 1200px)  {
+    .bg_color_header {
+    background: linear-gradient(to right, white 30%, hotpink);
+}
+}
+@media (max-width: 1000px)  {
+    .bg_color_header {
+        background: linear-gradient(to right, white 40%, hotpink);
+    }
+}
+@media (max-width: 800px)  {
+    .bg_color_header {
+        background: linear-gradient(to right, white 50%, hotpink);
+    }
+}
+@media (max-width: 600px)  {
+    .bg_color_header {
+        background: linear-gradient(to right, white 60%, hotpink);
+    }
+}
+@media (max-width: 400px)  {
+    .bg_color_header {
+        background: linear-gradient(to right, white 70%, hotpink);
+    }
+}
+@media (max-width: 350px)  {
+
+
+    .bg_color_header {
+        background: linear-gradient(to right, white 87%, hotpink);
+    }
+}
