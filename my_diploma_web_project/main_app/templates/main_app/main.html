@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Добро пожаловать! {% endblock %}
+{% block head_content %}
+<link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/update_text.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container color_m">
+<div class="row">
+    <div class="col-12 mt-3 ">
+      <div class="btn-group " role="group" >
+  <input onclick="setNewEntry('<i>{{ english_text }}</i>')" type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+  <label class="btn btn-outline-secondary" for="btnradio1">English</label>
+  <input onclick="setNewEntry('<i>{{ russian_text }}</i>')" type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+  <label class="btn btn-outline-secondary" for="btnradio2">Русский</label>
+</div></div></div>
+  <div class="row mt-5">
+   <div class="col-xxl-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+        <p class="fs-3 color_m_1" id="main_text"><i>{{ english_text }}</i></p>
+        <div class="row mt-4">
+    <div class="col-5">
+  </div>
+      <div class="col-7">
+      <img src="{% static 'img/rsp_v2.gif' %}" alt="роспись" width="190" height="120" >
+    </div></div></div>
+    <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-6 col-sm-0">
+      <img src="{% static 'img/eng_v3.gif' %}" alt="флаг" width="350" >
+    </div></div></div>
+{% endblock %}
