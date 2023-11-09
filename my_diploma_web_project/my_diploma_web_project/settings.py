@@ -88,6 +88,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -149,3 +150,23 @@ LOGGING = {
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#LOGIN_REDIRECT_URL = 'dashboard' # переход с переменной {{ next }}
+#LOGIN_URL = 'login'
+#LOGOUT_URL = 'logout'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # отправка писем в консоль
+
+#EMAIL_HOST = 'smtp.gmail.com'              # подключение почты для отправки писем
+#EMAIL_HOST_USER = 'pollop888777@gmail.com'
+#EMAIL_HOST_PASSWORD = '**********'
+#EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
+
+PASSWORD_HASHERS = [
+ 'django.contrib.auth.hashers.PBKDF2PasswordHasher', # хэширует по верхнему
+ 'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher', # сверяет по всем
+ 'django.contrib.auth.hashers.Argon2PasswordHasher',
+ 'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+ 'django.contrib.auth.hashers.ScryptPasswordHasher',
+]
