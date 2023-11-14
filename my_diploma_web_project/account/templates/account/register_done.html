@@ -3,12 +3,18 @@
 
 {% block title %}Welcome{% endblock %}
 
-{% block head_content %}{% endblock %}
+{% block head_content %}
+<link href="{% static 'css/login.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
 
 {% block content %}
-<h1>Welcome {{ new_user.first_name }}!</h1>
- <p>
- Your account has been successfully created.
- Now you can <a href="{% url 'login' %}">log in</a>.
+<div class="container pt-5  d-flex justify-content-center align-items-center">
+     <div class="d-block pt-4">
+
+<h2 class="stl_m">Hi, {{ new_user.first_name }}!</h2>
+      <p class="stl_m">Ваша учетная запись успешно создана.
  </p>
+  </div>
+ </div>
+<meta http-equiv="refresh" content="2; url={% url 'login' %}" />
 {% endblock %}

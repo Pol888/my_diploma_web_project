@@ -13,7 +13,7 @@
 <header class="header_m">
     <nav class="navbar bg-body-tertiary fixed-top bg_color_header">
       <div class="container-fluid aa">
-        <a class="navbar-brand" href="#"><img src="{% static 'img/logo_2.3.gif' %}" alt="ND-logo" width="250" ></a>
+        <a class="navbar-brand" href="{% url 'main_view' %}"><img src="{% static 'img/logo_2.3.gif' %}" alt="ND-logo" width="250" ></a>
         <button class="navbar-toggler border_my" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
           <span class="navbar-toggler-icon icon_my"></span>
@@ -26,7 +26,7 @@
           <div class="offcanvas-body list-unstyled">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 ">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Главная</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'main_view' %}">Главная</a>
               </li>
               {% if not request.user.is_authenticated %}
               <li class="nav-item">
