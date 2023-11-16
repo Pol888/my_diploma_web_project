@@ -24,7 +24,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main_app'
+    'main_app',
+    'shop.apps.ShopConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -105,6 +107,11 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+# media_files (files from the database)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+
 
 LOGGING = {
     "version": 1,

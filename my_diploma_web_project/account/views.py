@@ -41,6 +41,7 @@ def user_login(request):
     context = {'form': form, 'massage': massage}
     return render(request, 'account/login.html', context)
 
+
 @login_required
 def successful_login(request):
     return render(request, 'account/successful_login.html', )

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block head_content %}
+<link href="{% static 'css/product_details.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="pt-5 col-xxl-5  col-xl-5 col-lg-5 col-sm-12">
+      <img class="img_my" src="{% if product.image %}{{ product.image.url }}{% else %}
+                     {% static 'img/v_6.png' %}{% endif %}" alt="prod_img" width="400px">
+    </div>
+    <div class="pt-5 col-xxl-6 col-xl-6 col-lg-6 col-sm-12">
+      <p><span class="fw-bold">Название: </span>{{ product.name }}</p>
+      <p><span class="fw-bold">Цель: </span>{{ product.purpose }}</p>
+      <p><span class="fw-bold">Описание: </span>{{ product.description }}</p>
+      {% if product.category.name == 'Карточки' %}
+      <p><span class="fw-bold">Количество штук в наборе: </span>{{ product.quantity_in_one }}</p>
+      {% else %}
+      <p><span class="fw-bold">Количество страниц: </span>{{ product.quantity_in_one }}</p>
+      {% endif %}
+      <p><span class="fw-bold">Цена: </span>{{ product.price }}</p>
+    </div>
+    <div class="pt-5 col-xxl-1 col-xl-1 col-lg-1 col-sm-12">
+      <button type="button" class="btn btn-outline-secondary add_my">Добавить
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+  <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+</svg>
+              </button>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

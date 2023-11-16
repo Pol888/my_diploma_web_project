@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Магазин{% endblock %}
+
+{% block head_content %}
+<link href="{% static 'css/list_p.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+<nav class="z-1 justify-content-center navbar position-fixed min-vw-100 bg-body-tertiary my-style">
+  <div class="row ">
+  <div class="col ">
+  <li class="nav-item dropdown  list-unstyled">
+          <a class="nav-link dropdown-toggle fs-4 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Выберите категорию товара:
+          </a>
+      <ul class="dropdown-menu">
+            {% for i in categories %}
+            <li><a class="dropdown-item" href="{{ i.get_absolute_url }}">{{ i.name }}</a></li>
+            {% endfor %}
+          </ul></li></div></div></nav>
+
+<div class="container pt-5 z-0">
+  <div class="row pt-5 " >
+     {% for product in products %}
+
+      <div class="pt-5 col-xxl-4 col-lg-6 col-sm-12">
+        <div  class="my_card d-flex" >
+
+            <div class="img-and-bt d-block ">
+            <div id="myLink" onclick="location.href='{{ product.get_absolute_url }}'" class="prod_img">
+                <img class="prod_img" src="{% if product.image %}{{ product.image.url }}{% else %}
+                     {% static 'img/v_6.png' %}{% endif %}" alt="prod_img" width="170px">
+            </div>
+              <div class="basket">
+               <button type="button" class="my-button btn btn-outline-secondary">В корзину</button>
+              </div>
+           </div>
+           <div id="myLink_2" onclick="location.href='{{ product.get_absolute_url }}'" class="prod_info">
+
+               <p><span class="fw-bold ppp">Название: </span>{{ product.name }}</p>
+               <p><span class="fw-bold">Цель: </span>{{ product.purpose }}</p>
+               <p><span class="fw-bold">Краткое описание: </span>{{ product.short_description }}</p>
+               {% if product.category.name == 'Карточки' %}
+               <p><span class="fw-bold">Штук в наборе: </span>{{ product.quantity_in_one }}</p>
+               {% else %}
+               <p><span class="fw-bold">Количество страниц: </span>{{ product.quantity_in_one }}</p>
+               {% endif %}
+               <p><span class="fw-bold">Цена: </span>{{ product.price }}</p>
+
+
+
+           </div>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

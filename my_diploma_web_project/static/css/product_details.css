@@ -1,0 +1,10 @@
+.add_my {
+    border: 1px solid rgba(67,101,148,0.67);
+}
+.add_my:hover{
+    background: rgba(67,101,148,0.67);
+    opacity: 0.8;
+}
+.add_my:active{
+    background: hotpink;
+}

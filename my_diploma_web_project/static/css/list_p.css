@@ -1,0 +1,80 @@
+
+
+
+
+
+
+.my-button {
+    border: 1px solid #ffc6d7;
+    color: #ffc6d7;
+    margin-bottom: 29px;
+}
+
+.my-button:hover{
+    background-color: #ea1aab;
+
+
+}
+
+.navbar.my-style{
+
+
+    background: linear-gradient(to top, #ea1aab -700px,  white);
+   position: static;
+
+}
+.navbar.dropdown-menu{
+
+    z-index: 9999;
+
+}
+
+.img-and-bt {
+width: 170px;
+
+
+}
+
+.basket{
+    margin-left: 34px;
+    margin-bottom: 2px;
+    margin-top: 7px;
+    width:150px;
+}
+.my_card {
+    opacity: 0.9;
+    border: 8px;
+    border-radius: 5%;
+    background-color: #b808ff;
+}
+
+.my_card:hover {
+    background: linear-gradient(to bottom, hotpink 100px , rgba(67,101,148,0.67));
+}
+
+.prod_img{
+    border-radius: 5%;
+    position: relative;
+    left: 3px;
+    bottom: 5px;
+    opacity: 0.91;
+
+.prod_img:hover{
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+}
+.prod_info {
+ width: 300px;
+    margin-left: 10px;
+
+}
+
+.text_info{
+    color: white;
+}
+
+#myLink_2.ppp{
+    color: #ea1aab;
+}

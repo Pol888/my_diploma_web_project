@@ -12,7 +12,7 @@
 <body>
 <header class="header_m">
     <nav class="navbar bg-body-tertiary fixed-top bg_color_header">
-      <div class="container-fluid aa">
+      <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'main_view' %}"><img src="{% static 'img/logo_2.3.gif' %}" alt="ND-logo" width="250" ></a>
         <button class="navbar-toggler border_my" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -30,25 +30,13 @@
               </li>
               {% if not request.user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link active fw-bolder red" aria-current="page" href="{% url 'login' %}">Авторизация</a>
+                <a class="nav-link active fw-bolder" aria-current="page" href="{% url 'login' %}">Авторизация</a>
               </li>
               {% endif %}
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle fw-bold fs-5" href="#" role="button" data-bs-toggle="dropdown"
-                   aria-expanded="false">
-                  Купить
-                </a>
-                <ul class="dropdown-menu">
-                  {% if request.user.is_authenticated %}
-                  <li><a class="dropdown-item" href="#">Карточки</a></li>
-                  <li><a class="dropdown-item" href="#">Методички</a></li>
-                  {% else %}
 
-                  <li><a class="dropdown-item" href="{% url 'login' %}">Карточки</a></li>
 
-                  <li><a class="dropdown-item" href="{% url 'login' %}">Методички</a></li>
-                  {% endif %}
-                </ul>
+            <li class="nav-item">
+                <a class="nav-link active fw-bolder fs-5" aria-current="page" href="{% url 'login' %}">Магазин</a>
               </li>
 
 
