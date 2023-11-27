@@ -9,14 +9,14 @@
 
 {% block content %}
 
-<div class="container">
-  <div class="row">
+<div class="container ">
+  <div class="row pt-5">
     <div class="pt-5 col-xxl-5  col-xl-5 col-lg-5 col-sm-12">
       <img class="img_my" src="{% if product.image %}{{ product.image.url }}{% else %}
                      {% static 'img/v_6.png' %}{% endif %}" alt="prod_img" width="400px">
     </div>
-    <div class="pt-5 col-xxl-6 col-xl-6 col-lg-6 col-sm-12">
-      <p><span class="fw-bold">Название: </span>{{ product.name }}</p>
+    <div class="pt-5 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 color_text_my">
+      <p class="color_text_my"><span class="fw-bold">Название: </span>{{ product.name }}</p>
       <p><span class="fw-bold">Цель: </span>{{ product.purpose }}</p>
       <p><span class="fw-bold">Описание: </span>{{ product.description }}</p>
       {% if product.category.name == 'Карточки' %}

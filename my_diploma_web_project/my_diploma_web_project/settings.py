@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main_app',
     'shop.apps.ShopConfig',
-
+    #'cart.apps.CartConfig',
 ]
 
 MIDDLEWARE = [
@@ -178,3 +178,5 @@ PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
     'django.contrib.auth.hashers.ScryptPasswordHasher',
 ]
+
+CART_SESSION_ID = 'cart' # ключ в сессии к корзине

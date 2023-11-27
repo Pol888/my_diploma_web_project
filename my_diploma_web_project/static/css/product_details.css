@@ -1,10 +1,16 @@
 .add_my {
     border: 1px solid rgba(67,101,148,0.67);
+
 }
 .add_my:hover{
-    background: rgba(67,101,148,0.67);
-    opacity: 0.8;
+    border: 1px solid hotpink;
+    background: hotpink;
+    opacity: 0.9;
 }
 .add_my:active{
-    background: hotpink;
+    background: mediumvioletred;
+}
+
+.container.color_text_my.fw-bold{
+    color: #716669;
 }

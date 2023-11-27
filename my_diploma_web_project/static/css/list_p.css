@@ -1,7 +1,11 @@
 
 
 
+img.mag_img{
+    border: 1px solid rebeccapurple;
+    border-radius: 68%;
 
+}
 
 
 .my-button {
@@ -42,14 +46,15 @@ width: 170px;
     width:150px;
 }
 .my_card {
-    opacity: 0.9;
-    border: 8px;
+
+    border: 1px solid rgba(255, 0, 139, 0.06);
     border-radius: 5%;
-    background-color: #b808ff;
+    background-color: rgba(148, 67, 116, 0.69);
 }
 
 .my_card:hover {
     background: linear-gradient(to bottom, hotpink 100px , rgba(67,101,148,0.67));
+
 }
 
 .prod_img{
@@ -71,10 +76,5 @@ width: 170px;
 
 }
 
-.text_info{
-    color: white;
-}
 
-#myLink_2.ppp{
-    color: #ea1aab;
-}
+
