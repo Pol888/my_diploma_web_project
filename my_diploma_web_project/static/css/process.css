@@ -1,0 +1,9 @@
+.my_img{
+    width: 60px;
+    border-radius: 5px;
+}
+
+.my_div{
+    border-top: 1px solid rgba(178, 64, 255, 0.18);
+     text-align: right;
+}

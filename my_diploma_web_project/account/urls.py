@@ -30,8 +30,3 @@ urlpatterns = [
 
 ]
 
-a = input()
-if a != 5:
-    print(4)
-else:
-    print(1)

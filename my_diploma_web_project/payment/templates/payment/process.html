@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block head_content %}
+<link href="{% static 'css/process.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+ <div class="container pt-5">
+ {% for item in order.items.all %}
+ <div class="row pt-4">
+  <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-4 col-sm-6">
+
+ <img src="{% if item.product.image %}{{ item.product.image.url }}{% else %}
+                     {% static 'img/v_6.png' %}{% endif %}" class="my_img">
+   </div>
+
+  <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-6 " >
+  <div class="d-block">{{ item.product.name }}</div>
+  <div class="d-block">Цена за 1 шт.: ${{ item.price }}</div>
+  </div>
+
+  <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-3">
+   <div class="d-block">Количество: {{ item.quantity }}</div>
+  <div class="d-block">Сумма: ${{ item.get_cost }}</div>
+
+</div>
+ </div>
+  {% endfor %}
+
+<div class="my_div mt-3 justify-content-end">
+     <p>Общая стоимость: ${{ order.get_total_cost }}</p>
+ </div>
+
+<form action="{% url 'payment:process' %}" method="post">
+ <button type="submit" class="btn btn-success">Оплатить</button>
+ {% csrf_token %}
+ </form>
+ </div>
+{% endblock %}

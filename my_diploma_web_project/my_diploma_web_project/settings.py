@@ -26,7 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main_app',
     'shop.apps.ShopConfig',
-    #'cart.apps.CartConfig',
+    'cart.apps.CartConfig',
+    'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +54,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processors.cart',  # context processor для доступа из любого шаблона
             ],
         },
     },
@@ -102,7 +105,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+
+#STATIC_ROOT = BASE_DIR / 'static'
+
+STATIC_URL = 'static/' # python manage.py collectstatic (собрать статику)
+
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
@@ -110,8 +117,6 @@ STATICFILES_DIRS = [
 # media_files (files from the database)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
-
 
 LOGGING = {
     "version": 1,
@@ -179,4 +184,15 @@ PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.ScryptPasswordHasher',
 ]
 
-CART_SESSION_ID = 'cart' # ключ в сессии к корзине
+CART_SESSION_ID = 'cart'  # ключ в сессии к корзине
+
+# stripe система безналичных платежей
+STRIPE_PUBLISHABLE_KEY = ('pk_test_51OIOcUCUqneCbsuDGHN9Qlzo533y0lGc0QG7xcXPPpaZH2DJILLKe24XZQ'
+                          'wV3GrbYyBGcSBbQBZOfbmnsodpFDCH00hdXveNXz')  # Публикуемый ключ
+STRIPE_SECRET_KEY = ('sk_test_51OIOcUCUqneCbsuDYOsXFp8lGxS6xDMQDMhE5OngR'
+                     'XSX5bzJhTCwN2VNe5QBLEaU8X6DcwVfxLxEoJPTOvJJDW20004irITXTJ')  # Секретный ключ
+STRIPE_API_VERSION = '2023-10-16'  # 2023-08-16
+
+# Для получения данных с сервера stripe
+STRIPE_WEBHOOK_SECRET = 'whsec_9f9a085a0ddfd048db6c734456a703016109f76c5f6e44ef263ca9cd92db2c93'
+

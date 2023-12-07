@@ -1,11 +1,10 @@
 
-
-
 img.mag_img{
     border: 1px solid rebeccapurple;
     border-radius: 68%;
 
 }
+
 
 
 .my-button {
@@ -22,10 +21,9 @@ img.mag_img{
 
 .navbar.my-style{
 
-
-    background: linear-gradient(to top, #ea1aab -700px,  white);
+    background: linear-gradient(to right, #dfaaff,  white);
+  opacity: 87%;
    position: static;
-
 }
 .navbar.dropdown-menu{
 
@@ -49,7 +47,7 @@ width: 170px;
 
     border: 1px solid rgba(255, 0, 139, 0.06);
     border-radius: 5%;
-    background-color: rgba(148, 67, 116, 0.69);
+    background-color: rgba(146, 220, 4, 0.67);
 }
 
 .my_card:hover {

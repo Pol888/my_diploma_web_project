@@ -1,15 +1,17 @@
+
 html {
     height: 100%;
 
 }
+
 body {
     min-height: 100%;
     display: grid;
     grid-template-rows:112px 1fr auto;
+
 }
 .main_m{
     margin: 5px;
-
 
 }
 
@@ -19,7 +21,7 @@ body {
     background: linear-gradient(to right, hotpink -1900px, white);
 }
 .footer_m {
-    background-color: rgba(67,101,148,0.67);
+    background-color: rgba(67, 101, 148, 0.67);
     height: 75px;
 }
 .bg_color_header {
@@ -67,6 +69,7 @@ body {
     .bg_color_header {
         background: linear-gradient(to right, white 70%, hotpink);
     }
+
 }
 @media (max-width: 350px)  {
     .bg_color_header {

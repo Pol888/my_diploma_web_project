@@ -42,6 +42,6 @@ def user_login(request):
     return render(request, 'account/login.html', context)
 
 
-@login_required
+@login_required  # сработает только для зарегистрированных пользователей
 def successful_login(request):
     return render(request, 'account/successful_login.html', )

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block head_content %}{% endblock %}
+
+{% block content %}
+
+<div class="position-absolute top-50 start-50 translate-middle">
+<h1 style="font-size: 40px; color: #6e6b72">Ваш платеж прошел успешно!</h1>
+ </div>
+<meta http-equiv="refresh" content="10; url={% url 'main_view' %}" />
+
+
+
+{% endblock %}

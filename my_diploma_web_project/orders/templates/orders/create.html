@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Форма заказа
+{% endblock %}
+
+{% block head_content %}
+<link href="{% static 'css/create.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="row">
+    <div class="col">
+      <form method="post" class="order-form">
+     {{ form.as_p }}
+     <p><button class="btn btn-success btn-lg" type="submit">Создать заказ</button></p>
+     {% csrf_token %}
+     </form>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}

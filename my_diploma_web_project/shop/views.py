@@ -1,13 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Product
-
-
-# from my_diploma_web_project.cart.forms import CartAddProductForm
+from cart.forms import CartAddProductForm
 
 
 def product_detail(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
-    return render(request, 'shop/product_details.html', {'product': product})
+    return render(request, 'shop/product_details.html', {'product': product,
+                                                         'cart_product_form': CartAddProductForm()})
 
 
 def list_p(request, category_slug=None):
@@ -19,9 +18,7 @@ def list_p(request, category_slug=None):
     else:
         products = None
 
-    return render(request, 'shop/list_p.html', {'categories': categories,
-                                                'products': products, })
-    # 'cart_product_form': CartAddProductForm()})
+    return render(request, 'shop/list_p.html', {'categories': categories, 'products': products,})
 
 # def product_list(request, category_slug=None):
 #    category = None
