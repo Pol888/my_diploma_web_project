@@ -106,10 +106,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 
-#STATIC_ROOT = BASE_DIR / 'static'
+# STATIC_ROOT = BASE_DIR / 'static'
 
-STATIC_URL = 'static/' # python manage.py collectstatic (собрать статику)
-
+STATIC_URL = 'static/'  # python manage.py collectstatic (собрать статику)
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
@@ -191,8 +190,15 @@ STRIPE_PUBLISHABLE_KEY = ('pk_test_51OIOcUCUqneCbsuDGHN9Qlzo533y0lGc0QG7xcXPPpaZ
                           'wV3GrbYyBGcSBbQBZOfbmnsodpFDCH00hdXveNXz')  # Публикуемый ключ
 STRIPE_SECRET_KEY = ('sk_test_51OIOcUCUqneCbsuDYOsXFp8lGxS6xDMQDMhE5OngR'
                      'XSX5bzJhTCwN2VNe5QBLEaU8X6DcwVfxLxEoJPTOvJJDW20004irITXTJ')  # Секретный ключ
-STRIPE_API_VERSION = '2023-10-16'  # 2023-08-16
+STRIPE_API_VERSION = '2023-10-16'  # '2023-08-16'
+
+
+
+
+
+
+
+
 
 # Для получения данных с сервера stripe
 STRIPE_WEBHOOK_SECRET = 'whsec_9f9a085a0ddfd048db6c734456a703016109f76c5f6e44ef263ca9cd92db2c93'
-

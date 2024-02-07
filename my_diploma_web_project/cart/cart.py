@@ -3,6 +3,8 @@ from django.conf import settings
 from shop.models import Product
 
 
+
+
 class Cart:
     def __init__(self, request):
         self.session = request.session
@@ -47,8 +49,9 @@ class Cart:
     def __len__(self):  # количество товаров в корзине
         return sum(item['quantity'] for item in self.cart.values())
 
-    def get_len_items(self):
+    def get_len_items(self): # для получения количества разновидностей товаров
         return len(self.cart.keys())
+
     def get_total_price(self):  # общая стоимость товаров в корзине
         return sum(Decimal(item['price']) * item['quantity'] for item in self.cart.values())
 

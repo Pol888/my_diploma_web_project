@@ -1,12 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block title %}Магазин{% endblock %}
-
 {% block head_content %}
 <link href="{% static 'css/list_p.css' %}" rel="stylesheet" type="text/css">
 {% endblock %}
-
 {% block content %}
 <nav class="z-1 justify-content-center navbar position-fixed min-vw-100 bg-body-tertiary my-style">
   <div class="row ">
@@ -20,15 +17,12 @@
             <li><a class="dropdown-item" href="{{ i.get_absolute_url }}">{{ i.name }}</a></li>
             {% endfor %}
           </ul></li></div></div></nav>
-
 <div class="container pt-5 z-0 pb-5">
   <div class="row pt-5 " >
       {% if not products %}
        <div class="col d-flex justify-content-center align-content-center">
            <img class="mag_img" src="{% static 'img/photo_2023-11-21_21-14-57.jpg' %}" width="49%" alt="mag_img" >
-
        </div>
-
       {% else %}
       {% for product in products %}
       <div class="pt-5 col-xxl-4 col-lg-6 col-sm-12">

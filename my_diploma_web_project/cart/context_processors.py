@@ -1,3 +1,5 @@
 from .cart import Cart
-def cart(request): # процессор контекста
- return {'cart': Cart(request)}
+
+
+def cart(request):  # процессор контекста
+    return {'cart': Cart(request)}
